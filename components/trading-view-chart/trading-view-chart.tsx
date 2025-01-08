@@ -34,6 +34,7 @@ export function TradingViewChart({ symbol, exchange = 'BINANCE', interval = '60'
   const initChart = () => {
     if (typeof window.TradingView !== 'undefined' && containerRef.current) {
       new window.TradingView.widget({
+        fullscreen: false,
         autosize: true,
         symbol: `${exchange}:${symbol}USDT`,
         interval: interval,
@@ -55,10 +56,11 @@ export function TradingViewChart({ symbol, exchange = 'BINANCE', interval = '60'
           "RSI@tv-basicstudies",
           "VolumeMACrossover@tv-basicstudies"
         ],
+        responsive: true,
       });
     }
   };
 
-  return <div id="tradingview_chart_container" ref={containerRef} className="w-full h-[1200px] sm:h-[800px] md:h-[1000px] lg:h-[1200px]" />;
+  return <div id="tradingview_chart_container" ref={containerRef} className="w-full h-full" />;
 }
 

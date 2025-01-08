@@ -41,9 +41,9 @@ export default function HomePage() {
       <div className="container mx-auto px-4 py-6 min-h-screen flex">
         <div className="flex-grow">
           <div className="grid gap-6 grid-cols-1">
-            <div className="grid gap-6 grid-cols-1 lg:grid-cols-3">
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <div className="lg:col-span-2">
-                <div className="w-full h-[400px]">
+                <div className="w-full h-[400px] xs:h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px]">
                   <DynamicTradingViewChart symbol={selectedCoin} />
                 </div>
               </div>

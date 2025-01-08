@@ -141,7 +141,7 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
   const { checkNotifications } = useNotificationContext();
 
   useEffect(() => {
-    const unsubscribeUpbit = createUpbitWebSocket((data) => {
+    const upbitCleanup = createUpbitWebSocket((data) => {
       setTickers(prevTickers => {
         const updatedTickers = prevTickers.map(ticker => {
           if (ticker.symbol === data.code.replace('KRW-', '')) {
@@ -160,7 +160,7 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
       })
     })
 
-    const unsubscribeBinance = createBinanceWebSocket((data) => {
+    const binanceCleanup = createBinanceWebSocket((data) => {
       setTickers(prevTickers => {
         const updatedTickers = prevTickers.map(ticker => {
           if (ticker.symbol === data.s.replace('USDT', '')) {
@@ -179,8 +179,8 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
     })
 
     return () => {
-      unsubscribeUpbit()
-      unsubscribeBinance()
+      upbitCleanup()
+      binanceCleanup()
     }
   }, [exchangeRate])
 
@@ -338,8 +338,8 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-row items-center gap-2 md:flex-row md:items-center">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center">
+        <div className="flex flex-wrap items-center gap-2">
           <div className="flex items-center gap-2">
             <span className="text-xs md:text-sm font-medium whitespace-nowrap">기준 거래소</span>
             <Select value={baseExchange} onValueChange={setBaseExchange} position="above">
@@ -383,7 +383,7 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
                 ))}
               </SelectContent>
             </Select>
-            <span className="text-[10px] md:text-xs text-gray-500 whitespace-nowrap">*이외 거래소 추후 업데이트 예정</span>
+            <span className="text-[10px] md:text-xs text-gray-500 break-normal">*이외 거래소 추후 업데이트 예정</span>
           </div>
         </div>
         <div className="flex items-center justify-end w-full gap-2">

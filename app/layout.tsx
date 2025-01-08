@@ -96,9 +96,10 @@ export default function RootLayout({
     <html lang="ko" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
-        <meta name="naver-site-verification" content="your-naver-verification-code" />
+        <meta name="naver-site-verification" content="9dd8247689aaf9ab6285cc6a68df76c69d345b62" />
         <meta name="google-adsense-account" content="ca-pub-4772054140165349" />
         <link rel="canonical" href="https://kimchipremium.com" />
+        <meta name="google-site-verification" content="wNmhrrbWED4xu3LwP3FUzoN149olJynMPCdjiwUOGXQ" />
       </head>
       <body className={inter.className}>
         <ErrorBoundary>
