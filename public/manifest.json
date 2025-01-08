@@ -1,0 +1,37 @@
+{
+  "name": "김치프리미엄 - 실시간 암호화폐 가격 비교",
+  "short_name": "김프",
+  "description": "실시간 암호화폐 가격 비교 및 김치 프리미엄 확인",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "비트코인 시세",
+      "short_name": "BTC",
+      "description": "비트코인 실시간 시세 확인",
+      "url": "/coins/btc",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["finance", "cryptocurrency"],
+  "lang": "ko-KR",
+  "dir": "ltr"
+}
+
