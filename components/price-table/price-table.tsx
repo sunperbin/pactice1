@@ -342,7 +342,7 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
         <div className="flex flex-row items-center gap-2 md:flex-row md:items-center">
           <div className="flex items-center gap-2">
             <span className="text-xs md:text-sm font-medium whitespace-nowrap">기준 거래소</span>
-            <Select value={baseExchange} onValueChange={setBaseExchange}>
+            <Select value={baseExchange} onValueChange={setBaseExchange} position="above">
               <SelectTrigger className="w-[140px] md:w-[180px] h-8 md:h-10 text-xs md:text-sm">
                 <SelectValue>
                   {baseExchange && (
@@ -365,7 +365,7 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
           <div className="flex items-center gap-2">
             <span className="text-xs md:text-sm font-medium whitespace-nowrap">해외 거래소</span>
             <Select value={compareExchange} onValueChange={setCompareExchange}>
-              <SelectTrigger className="w-[140px] md:w-[180px] h-8 md:h-10 text-xs md:text-sm">
+              <SelectTrigger className="w-[220px] md:w-[260px] h-8 md:h-10 text-xs md:text-sm">
                 <SelectValue>
                   {compareExchange && (
                     <ExchangeOption
@@ -383,7 +383,7 @@ export function PriceTable({ onSelectCoin }: PriceTableProps) {
                 ))}
               </SelectContent>
             </Select>
-            <span className="text-[10px] md:text-xs text-gray-500 break-keep">*이외 거래소 추후 업데이트 예정</span>
+            <span className="text-[10px] md:text-xs text-gray-500 whitespace-nowrap">*이외 거래소 추후 업데이트 예정</span>
           </div>
         </div>
         <div className="flex items-center justify-end w-full gap-2">
